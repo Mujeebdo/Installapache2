@@ -3,7 +3,9 @@
      become: yes
      tasks : 
         -name: Install httpd
-         apt : name=httpd state=present
+         yum : 
+          name=httpd 
+          state=present
         -name : Start httpd
          service: name=httpd state:started
          
