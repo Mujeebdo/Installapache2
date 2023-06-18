@@ -1,25 +1,14 @@
-
 ---
   - hosts: localhost
     user: admin
     become: yes
     become_method: sudo
     become_user: root
-    tasks: 
+    tasks:
      - name: Update package cache
-       become: true
-       ansible_distribution:
-        - Ubuntu
+         - Ubuntu
         - Debian
        apt:
-       update_cache: yes
-
-     - name: Update package cache
-       become: true
-       ansible_distribution:
-         - CentOS
-         - Fedora
-       yum:
        update_cache: yes
      - name: Install apache2
        apt: 
@@ -29,3 +18,4 @@
        service: 
          name: apache2 
          state: started  
+
