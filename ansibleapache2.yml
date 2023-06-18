@@ -1,11 +1,14 @@
 ---
   - hosts: all
+    user: admin
     become: yes
+    become_method: sudo
+    become_user: root
     tasks: 
      - name: Install httpd
-       yum : name=httpd state=present
+       yum: name=httpd state=present
        
-     - name : Start httpd
+     - name: Start httpd
        service: name=httpd state:started
          
 
