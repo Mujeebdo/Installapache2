@@ -5,21 +5,20 @@
     become_method: sudo
     become_user: root
     tasks:
-     - name: Update package cache
-       become: yes
-       vars:
-        ansible_pkg_mgr:
-         - apt:  # Tasks for systems using apt package manager
-           name: update cache
-         - yum:  # Tasks for systems using yum package manager
-           name: update cache
-       block:
+      - name: Update package cache
+        vars:
+          ansible_pkg_mgr:
+           - apt:  # Tasks for systems using apt package manager
+             name: update cache
+           - yum:  # Tasks for systems using yum package manager
+             name: update cache
+        block:
         - "{{ ansible_pkg_mgr }}"
-     - name: Install apache2
-       apt: 
-         name: apache2 
-         state: present
-     - name: Start apache2
-       service: 
-         name: apache2 
-         state: started  
+      - name: Install apache2
+        apt: 
+          name: apache2 
+          state: present
+      - name: Start apache2
+        service: 
+          name: apache2 
+          state: started  
