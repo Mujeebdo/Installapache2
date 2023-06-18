@@ -9,9 +9,9 @@
         vars:
           ansible_pkg_mgr:
            - apt:  # Tasks for systems using apt package manager
-             name: update cache
+              name: update cache
            - yum:  # Tasks for systems using yum package manager
-             name: update cache
+              name: update cache
       - name: Install apache2
         apt: 
           name: apache2 
