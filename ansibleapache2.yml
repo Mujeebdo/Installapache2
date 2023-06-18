@@ -1,3 +1,4 @@
+
 ---
   - hosts: all
     user: admin
@@ -7,13 +8,9 @@
     tasks: 
      - name: Install apache2
        apt: 
-         name=apache2 
-         state=present
+         name: apache2 
+         state: present
      - name: Start apache2
        service: 
-         name=apache2 
-         state:started
-         
-
-
-        
+         name: apache2 
+         state: started  
