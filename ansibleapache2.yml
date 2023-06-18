@@ -12,8 +12,6 @@
              name: update cache
            - yum:  # Tasks for systems using yum package manager
              name: update cache
-        block:
-        - "{{ ansible_pkg_mgr }}"
       - name: Install apache2
         apt: 
           name: apache2 
