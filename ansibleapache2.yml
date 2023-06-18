@@ -6,6 +6,21 @@
     become_method: sudo
     become_user: root
     tasks: 
+     - name: Update package cache
+       become: true
+       ansible_distribution:
+        - Ubuntu
+        - Debian
+       apt:
+       update_cache: yes
+
+     - name: Update package cache
+       become: true
+       ansible_distribution:
+         - CentOS
+         - Fedora
+       yum:
+       update_cache: yes
      - name: Install apache2
        apt: 
          name: apache2 
