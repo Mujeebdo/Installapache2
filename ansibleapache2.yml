@@ -5,11 +5,11 @@
     become_method: sudo
     become_user: root
     tasks:
-      - name: Install apache2
+      - name: Install httpd
         yum: 
-          name: apache2 
+          name: httpd 
           state: latest
-      - name: Start apache2
+      - name: Start httpd
         service: 
-          name: apache2 
+          name: httpd 
           state: started
