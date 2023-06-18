@@ -10,11 +10,11 @@
           update_cache: true
           cache_valid_time: 3600
           force_apt_get: true
-      - name: Install apache2
-        apt: 
-          name: apache2
+      - name: Install httpd
+        yum: 
+          name: httpd
           state: latest
-      - name: Start apache2
+      - name: Start httpd
         service: 
-          name: apache2 
+          name: httpd 
           state: started
