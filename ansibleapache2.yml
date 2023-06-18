@@ -6,9 +6,13 @@
     become_user: root
     tasks: 
      - name: Install apache2
-       apt: name=apache2 state=present
+       apt: 
+         name=apache2 
+         state=present
      - name: Start apache2
-       service: name=apache2 state:started
+       service: 
+         name=apache2 
+         state:started
          
 
 
