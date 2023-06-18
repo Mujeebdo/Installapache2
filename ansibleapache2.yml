@@ -5,12 +5,8 @@
     become_method: sudo
     become_user: root
     tasks:
-      - name: Upgrade python3-apt
-        apt: 
-          name: python3-apt
-          state: latest
       - name: Install apache2
-        apt: 
+        yum: 
           name: apache2 
           state: latest
       - name: Start apache2
