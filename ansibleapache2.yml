@@ -7,7 +7,7 @@
     become_user: root
     tasks: 
      - name: Install apache2
-       apt: 
+       yum: 
          name: apache2 
          state: present
      - name: Start apache2
