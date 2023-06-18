@@ -5,8 +5,13 @@
     become_method: sudo
     become_user: root
     tasks:
+      - name: Update Repositry Cache
+        apt:
+        update_cache: true
+        cache_valide_time: 3600
+        force_apt_get: true
       - name: Install httpd
-        yum: 
+        apt: 
           name: httpd 
           state: latest
       - name: Start httpd
